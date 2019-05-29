@@ -1,0 +1,31 @@
+{
+  "name": "vuejs-student",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clear": "rm -rf build",
+    "build": "tsc",
+    "dev": "nodemon",
+    "start": "build/src",
+    "all": "ts-node src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ockang/vuejs-student.git"
+  },
+  "author": "Edinsoncs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ockang/vuejs-student/issues"
+  },
+  "homepage": "https://github.com/ockang/vuejs-student#readme",
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "ts-node": "^8.2.0",
+    "typescript": "^3.4.5"
+  }
+}
