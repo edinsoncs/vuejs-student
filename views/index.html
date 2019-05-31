@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>VUEJSBOOK.IO</title>
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div id="app">
+		<h1 v-if="name" class="mb2">Escribiste un mensaje</h1>
+		<h1 v-else="name" class="mb2">No hay mensaje</h1>
+		<form action="" class="form">
+			<input type="text" v-model="name">
+		</form>
+		<h2 class="mt2 mb2">{{ name }}</h2>
+		
+
+		<i-button @click="show">Click me!</i-button>
+    	<Modal v-model="visible" title="Welcome">Welcome to iView</Modal>
+
+
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+	<script src="//unpkg.com/iview/dist/iview.min.js"></script>
+
+	<script src="/js/development-app.js"></script>
+</body>
+</html>
