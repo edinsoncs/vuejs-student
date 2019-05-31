@@ -4,16 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>VUEJSBOOK.IO</title>
+    <title>VUEJSBOOK.IO {{name}}</title>
     <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
     <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+
 
 </head>
 
 <body>
 
+	<!-- DIRECTIVES -->
+	<!-- <ul v-for="i in 10">{{i}}</ul> -->
+	<!-- <span v-if="variable"></span> -->
+	<!-- <span v-else="variable"></span> -->
+	<!-- <input type="text" v-model="name"> -->
+	<!-- Template use -->
+
 	<div id="app">
-		<h1 v-if="name" class="mb2">Escribiste un mensaje</h1>
+
+		<h1>HOLA: {{show_alert}}</h1>
+
+		<template v-if="name">
+			<h1 class="mb2">Escribiste un mensaje</h1>
+			<h2>{{ message }}</h2>
+			<!-- <h3>{{ $data }}</h3> -->
+		</template>
+
+	
 		<h1 v-else="name" class="mb2">No hay mensaje</h1>
 		<form action="" class="form">
 			<input type="text" v-model="name">
@@ -22,7 +39,39 @@
 		
 
 		<i-button @click="show">Click me!</i-button>
-    	<Modal v-model="visible" title="Welcome">Welcome to iView</Modal>
+    		<Modal v-model="visible" title="Welcome">Welcome to iView</Modal>
+    	<br>
+
+
+    	<ul>
+    		<li v-for="i in 10">Item {{i}} es {{ (i * 2) }}</li>
+    	</ul>
+
+    	<h2>My Entreprise</h2>
+
+    	<template v-for="i in entreprise">
+		    <Card style="width:320px">
+		        <div style="text-align:center">
+		            <h3>{{i}}</h3>
+		        </div>
+		    </Card>
+		</template>
+
+		<h2>My Music</h2>
+		<template v-for="(m, key, index) in music">
+		    <Card style="width:320px">
+		        <div style="text-align:center">
+		        	<h2>{{key}}</h2>
+		            <h3>{{index}} is {{m.name}} time is: {{m.time}}</h3>
+		        </div>
+		    </Card>
+		</template>
+
+		<template>
+			<button type="button" class="ivu-btn ivu-btn-primary" v-on:click="ready();">CLICK READY</button>
+		</template>
+
+
 
 
 	</div>
